@@ -181,7 +181,7 @@ func uninstall(dir string) error {
 func linkPath(dir string) []string {
 	return []string{
 		filepath.Join(dir, "git-ci"),
-		filepath.Join(dir, "git-feat"),
+		filepath.Join(dir, "git-feature"),
 		filepath.Join(dir, "git-fix"),
 		filepath.Join(dir, "git-docs"),
 		filepath.Join(dir, "git-style"),

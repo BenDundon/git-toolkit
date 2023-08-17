@@ -25,7 +25,7 @@ var mainApp = &cli.App{
 }
 
 var subApps = []*cli.App{
-	newBranchApp(feat),
+	newBranchApp(feature),
 	newBranchApp(fix),
 	newBranchApp(docs),
 	newBranchApp(style),

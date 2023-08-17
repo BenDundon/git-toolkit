@@ -1,7 +1,7 @@
 package main
 
 const (
-	feat     string = "feat"
+	feature  string = "feature"
 	fix      string = "fix"
 	docs     string = "docs"
 	style    string = "style"
@@ -13,7 +13,7 @@ const (
 )
 
 const (
-	featDesc     string = "FEAT (Introducing new features)"
+	featDesc     string = "FEATURE (Introducing new features)"
 	fixDesc      string = "FIX (Bug fix)"
 	docsDesc     string = "DOCS (Writing docs)"
 	styleDesc    string = "STYLE (Improving structure/format of the code)"
