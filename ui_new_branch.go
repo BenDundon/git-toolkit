@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strings"
 	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
@@ -30,6 +31,24 @@ var (
 				Background(lipgloss.AdaptiveColor{Light: "#D63B3A", Dark: "#D63B3A"})
 )
 
+func makeSafeBranchName(branch string) string {
+
+	// Characters to remove from branch names
+	var illegalChars []string = []string{" ", "\n", "\t"}
+
+	// Loop over the candidate name, trimming or replacing illegal characters as we go
+	for index := 0; index < len(illegalChars); index++ {
+		target := illegalChars[index]
+		branch = strings.Trim(branch, target)
+		branch = strings.ReplaceAll(branch, target, "-")
+	}
+
+	// Convert the whole thing to lower once it's cleaned
+	branch = strings.ToLower(branch)
+
+	return branch
+}
+
 type branchModel struct {
 	branch string
 	done   bool
@@ -37,7 +56,7 @@ type branchModel struct {
 }
 
 func newBranchModel(branch string) branchModel {
-	return branchModel{branch: branch}
+	return branchModel{branch: makeSafeBranchName(branch)}
 }
 
 func (m branchModel) Init() tea.Cmd {
