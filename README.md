@@ -1,9 +1,10 @@
-# GitFlow ToolKit
+# Git ToolKit
+
+This is my personal git toolkit, built off [mritd's GitFlow Toolkit](https://github.com/mritd/gitflow-toolkit)
 
 > GitFlow Toolkit is a gitflow commit tool written by go, used to standardize the format of git commit message and quickly create gitflow branches,
 > It should be noted that GitFlow Toolkit currently only supports the generation of the commit message style of the [Angular community specification](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.greljkmo14y0).
 
-### Starting from the v2.1.1 version, the white theme terminal will be supported, and the white theme color scheme is being adjusted.
 
 |                                                                                                                                               |                                                                                                                                              | 
 |:---------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -18,28 +19,45 @@
 
 ## Installation
 
-Just download the latest version from the Release page and execute the `install` command:
+### x86_64
+
+Currently, I'm only building binaries for `x86_64`, you can download and install as follows:
 
 ```sh
-export VERSION='v2.1.5'
+
+export VERSION='v0.5'
 
 # download bin file
-wget https://github.com/mritd/gitflow-toolkit/releases/download/${VERSION}/gitflow-toolkit-darwin-arm64
+wget https://github.com/BenDundon/git-toolkit/releases/download/${VERSION}/gitflow-toolkit-x86_64
 
 # add permissions
-chmod +x gitflow-toolkit-darwin-arm64
+chmod +x gitflow-toolkit-x86_64
 
 # install
-sudo ./gitflow-toolkit-darwin-arm64 install
+sudo ./gitflow-toolkit-x86_64 install
+
+```
+
+### Other arch/Install from source
+
+Requires:
+
+- `golang`
+
+```sh
+# Clone the repository
+git clone https://github.com/BenDundon/git-toolkit.git
+
+cd git-toolkit
+
+# build the binary
+go build
+
+sudo ./git-toolkit install
 ```
 
 After the installation is complete, you can delete the bin file.
 
-If the go language development environment is installed locally, you can install it through the `go get` command:
-
-```sh
-go install github.com/mritd/gitflow-toolkit/v2@latest
-```
 
 ## Comands
 
@@ -47,7 +65,7 @@ go install github.com/mritd/gitflow-toolkit/v2@latest
 |---------------------|-----------------------------------------------------------|
 | `git ci`            | Enter commit message interactively                        |
 | `git ps`            | Push the current branch to the remote                     |
-| `git feat NAME`     | Switch a new branch from the current branch (`feat/NAME`) |
+| `git feature NAME`  | Switch a new branch from the current branch (`feature/NAME`) |
 | `git fix NAME`      | `git switch -c fix/NAME`                                  |
 | `git hotfix NAME`   | `git switch -c hotfix/NAME`                               |
 | `git docs NAME`     | `git switch -c docs/NAME`                                 |
@@ -56,4 +74,5 @@ go install github.com/mritd/gitflow-toolkit/v2@latest
 | `git chore NAME`    | `git switch -c chore/NAME`                                |
 | `git perf NAME`     | `git switch -c perf/NAME`                                 |
 | `git style NAME`    | `git switch -c style/NAME`                                |
+| `git release NAME`  | `git switch -c release/NAME`                              |
 
