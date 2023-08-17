@@ -6,7 +6,7 @@ func installCmd() *cli.Command {
 	return &cli.Command{
 		Name:    "install",
 		Aliases: []string{"git-install"},
-		Usage:   "Install gitflow-toolkit",
+		Usage:   "Install git-toolkit",
 		Action: func(c *cli.Context) error {
 			if c.NArg() != 0 {
 				return cli.ShowAppHelp(c)
@@ -33,7 +33,7 @@ func uninstallCmd() *cli.Command {
 	return &cli.Command{
 		Name:    "uninstall",
 		Aliases: []string{"git-uninstall"},
-		Usage:   "Uninstall gitflow-toolkit",
+		Usage:   "Uninstall git-toolkit",
 		Action: func(c *cli.Context) error {
 			if c.NArg() != 0 {
 				return cli.ShowAppHelp(c)

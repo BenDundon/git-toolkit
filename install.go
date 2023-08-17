@@ -19,8 +19,8 @@ func install(dir string, withHook bool) error {
 		return err
 	}
 
-	toolKitHome := filepath.Join(home, ".gitflow-toolkit")
-	toolKitPath := filepath.Join(dir, "gitflow-toolkit")
+	toolKitHome := filepath.Join(home, ".git-toolkit")
+	toolKitPath := filepath.Join(dir, "git-toolkit")
 	toolKitHooks := filepath.Join(toolKitHome, "hooks")
 	links := linkPath(dir)
 
@@ -130,8 +130,8 @@ func uninstall(dir string) error {
 		return err
 	}
 
-	toolKitHome := filepath.Join(home, ".gitflow-toolkit")
-	toolKitPath := filepath.Join(dir, "gitflow-toolkit")
+	toolKitHome := filepath.Join(home, ".git-toolkit")
+	toolKitPath := filepath.Join(dir, "git-toolkit")
 	links := linkPath(dir)
 
 	m := ui.NewMultiTaskModelWithTasks([]ui.Task{
