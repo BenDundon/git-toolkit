@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/mritd/gitflow-toolkit/v2/ui"
+	"github.com/BenDundon/git-toolkit/ui"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/mitchellh/go-homedir"
