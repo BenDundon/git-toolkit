@@ -10,6 +10,7 @@ const (
 	chore    string = "chore"
 	perf     string = "perf"
 	hotfix   string = "hotfix"
+	release  string = "release"
 )
 
 const (
@@ -22,6 +23,7 @@ const (
 	choreDesc    string = "CHORE (Changing CI/CD)"
 	perfDesc     string = "PERF (Improving performance)"
 	hotfixDesc   string = "HOTFIX (Bug fix urgently)"
+	releaseDesc  string = "RELEASE (Release version)"
 )
 
 const commitMessageCheckPattern = `^(feat|fix|docs|style|refactor|test|chore|perf|hotfix)\((\S.*)\):\s(\S.*)|^Merge.*`

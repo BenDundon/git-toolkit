@@ -34,6 +34,7 @@ var subApps = []*cli.App{
 	newBranchApp(chore),
 	newBranchApp(perf),
 	newBranchApp(hotfix),
+	newBranchApp(release),
 	commitApp(),
 	checkMessageApp(),
 	pushApp(),
