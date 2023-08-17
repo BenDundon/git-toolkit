@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/mritd/gitflow-toolkit/v2/ui"
+	"github.com/BenDundon/git-toolkit/ui"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/mitchellh/go-homedir"
@@ -19,8 +19,8 @@ func install(dir string, withHook bool) error {
 		return err
 	}
 
-	toolKitHome := filepath.Join(home, ".gitflow-toolkit")
-	toolKitPath := filepath.Join(dir, "gitflow-toolkit")
+	toolKitHome := filepath.Join(home, ".git-toolkit")
+	toolKitPath := filepath.Join(dir, "git-toolkit")
 	toolKitHooks := filepath.Join(toolKitHome, "hooks")
 	links := linkPath(dir)
 
@@ -130,8 +130,8 @@ func uninstall(dir string) error {
 		return err
 	}
 
-	toolKitHome := filepath.Join(home, ".gitflow-toolkit")
-	toolKitPath := filepath.Join(dir, "gitflow-toolkit")
+	toolKitHome := filepath.Join(home, ".git-toolkit")
+	toolKitPath := filepath.Join(dir, "git-toolkit")
 	links := linkPath(dir)
 
 	m := ui.NewMultiTaskModelWithTasks([]ui.Task{
@@ -181,7 +181,7 @@ func uninstall(dir string) error {
 func linkPath(dir string) []string {
 	return []string{
 		filepath.Join(dir, "git-ci"),
-		filepath.Join(dir, "git-feat"),
+		filepath.Join(dir, "git-feature"),
 		filepath.Join(dir, "git-fix"),
 		filepath.Join(dir, "git-docs"),
 		filepath.Join(dir, "git-style"),
@@ -190,6 +190,7 @@ func linkPath(dir string) []string {
 		filepath.Join(dir, "git-chore"),
 		filepath.Join(dir, "git-perf"),
 		filepath.Join(dir, "git-hotfix"),
+		filepath.Join(dir, "git-release"),
 		filepath.Join(dir, "git-ps"),
 	}
 }

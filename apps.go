@@ -9,11 +9,11 @@ import (
 )
 
 var mainApp = &cli.App{
-	Name:                 "gitflow-toolkit",
-	Usage:                "Git Flow ToolKit",
+	Name:                 "git-toolkit",
+	Usage:                "GitFlow-based ToolKit",
 	Version:              fmt.Sprintf("%s %s %s", version, buildDate, buildCommit),
-	Authors:              []*cli.Author{{Name: "mritd", Email: "mritd@linux.com"}},
-	Copyright:            "Copyright (c) " + time.Now().Format("2006") + " mritd, All rights reserved.",
+	Authors:              []*cli.Author{{Name: "mritd", Email: "mritd@linux.com"}, {Name: "BenDundon", Email: "benjamin.dundon@protonmail.com"}},
+	Copyright:            "Copyright (c) " + time.Now().Format("2023") + " mritd and BenDundon, All rights reserved.",
 	EnableBashCompletion: true,
 	Action: func(c *cli.Context) error {
 		return cli.ShowAppHelp(c)
@@ -25,7 +25,7 @@ var mainApp = &cli.App{
 }
 
 var subApps = []*cli.App{
-	newBranchApp(feat),
+	newBranchApp(feature),
 	newBranchApp(fix),
 	newBranchApp(docs),
 	newBranchApp(style),
@@ -34,6 +34,7 @@ var subApps = []*cli.App{
 	newBranchApp(chore),
 	newBranchApp(perf),
 	newBranchApp(hotfix),
+	newBranchApp(release),
 	commitApp(),
 	checkMessageApp(),
 	pushApp(),

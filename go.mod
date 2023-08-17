@@ -1,4 +1,4 @@
-module github.com/mritd/gitflow-toolkit/v2
+module github.com/BenDundon/git-toolkit
 
 go 1.18
 

@@ -107,7 +107,7 @@ func (m selectorModel) View() string {
 
 func newSelectorModel() selectorModel {
 	l := list.NewModel([]list.Item{
-		selectorItem{ct: feat, title: featDesc},
+		selectorItem{ct: feature, title: featDesc},
 		selectorItem{ct: fix, title: fixDesc},
 		selectorItem{ct: docs, title: docsDesc},
 		selectorItem{ct: style, title: styleDesc},

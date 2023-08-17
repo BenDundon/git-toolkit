@@ -1,7 +1,7 @@
 package main
 
 const (
-	feat     string = "feat"
+	feature  string = "feature"
 	fix      string = "fix"
 	docs     string = "docs"
 	style    string = "style"
@@ -10,10 +10,11 @@ const (
 	chore    string = "chore"
 	perf     string = "perf"
 	hotfix   string = "hotfix"
+	release  string = "release"
 )
 
 const (
-	featDesc     string = "FEAT (Introducing new features)"
+	featDesc     string = "FEATURE (Introducing new features)"
 	fixDesc      string = "FIX (Bug fix)"
 	docsDesc     string = "DOCS (Writing docs)"
 	styleDesc    string = "STYLE (Improving structure/format of the code)"
@@ -22,6 +23,7 @@ const (
 	choreDesc    string = "CHORE (Changing CI/CD)"
 	perfDesc     string = "PERF (Improving performance)"
 	hotfixDesc   string = "HOTFIX (Bug fix urgently)"
+	releaseDesc  string = "RELEASE (Release version)"
 )
 
 const commitMessageCheckPattern = `^(feat|fix|docs|style|refactor|test|chore|perf|hotfix)\((\S.*)\):\s(\S.*)|^Merge.*`
