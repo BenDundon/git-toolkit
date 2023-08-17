@@ -36,8 +36,12 @@ func makeSafeBranchName(branch string) string {
 	var illegalChars []string = []string{" ", "\n", "\t"}
 
 	for index := 0; index < len(illegalChars); index++ {
-		branch = strings.ReplaceAll(branch, illegalChars[index], "-")
+		target := illegalChars[index]
+		branch = strings.Trim(branch, target)
+		branch = strings.ReplaceAll(branch, target, "-")
 	}
+
+	branch = strings.ToLower(branch)
 
 	return branch
 }
