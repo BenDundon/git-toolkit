@@ -72,15 +72,15 @@ func install(dir string, withHook bool) error {
 				}
 				defer func() { _ = currentFile.Close() }()
 
-				installFile, err := os.OpenFile(filepath.Join(dir, "gitflow-toolkit"), os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0755)
+				installFile, err := os.OpenFile(filepath.Join(dir, "git-toolkit"), os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0755)
 				if err != nil {
-					return fmt.Errorf("💔 failed to create bin file: %s: %s", filepath.Join(toolKitHome, "gitflow-toolkit"), err)
+					return fmt.Errorf("💔 failed to create bin file: %s: %s", filepath.Join(toolKitHome, "git-toolkit"), err)
 				}
 				defer func() { _ = installFile.Close() }()
 
 				_, err = io.Copy(installFile, currentFile)
 				if err != nil {
-					return fmt.Errorf("💔 failed to copy file: %s: %s", filepath.Join(toolKitHome, "gitflow-toolkit"), err)
+					return fmt.Errorf("💔 failed to copy file: %s: %s", filepath.Join(toolKitHome, "git-toolkit"), err)
 				}
 				return nil
 			},
